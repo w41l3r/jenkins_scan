@@ -3,7 +3,7 @@ Find jenkins environment and checks for CVE-2024-23897
 
 ##  Como funciona
 
-  Detecção de Jenkins
+  ### Detecção de Jenkins
 
   Testa os caminhos: /, /login, /oops, /api/json, /cli, /jenkins/, /jenkins/api/json
 
@@ -13,7 +13,7 @@ Find jenkins environment and checks for CVE-2024-23897
   3. Body HTML — strings como "login to jenkins", "hudson.model", etc.
   4. /api/json — confirma pela estrutura JSON (_class, jobs, views)
 
-  Verificação do CVE-2024-23897
+  ### Verificação do CVE-2024-23897
 
   Passiva (padrão): compara a versão detectada com os thresholds:
   - Weekly: < 2.442 → vulnerável
